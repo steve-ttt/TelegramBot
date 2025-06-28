@@ -1,0 +1,6 @@
+{
+  "botToken": "YOUR_TELEGRAM_BOT_TOKEN_HERE",
+  "ollamaUrl": "http://localhost:11434",
+  "ollamaModel": "llama3",
+  "systemPrompt": "You are a helpful assistant."
+}

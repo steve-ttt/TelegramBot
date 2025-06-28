@@ -1,0 +1,15 @@
+# Gradle
+.gradle
+build/
+
+# IDE files
+.idea/
+*.iml
+out/
+
+# Secrets - Do not commit actual config files
+*.json
+!config.example.json
+
+# Log files
+*.log
