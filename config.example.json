@@ -1,6 +1,9 @@
 {
   "botToken": "YOUR_TELEGRAM_BOT_TOKEN_HERE",
   "ollamaUrl": "http://localhost:11434",
-  "ollamaModel": "llama3",
-  "systemPrompt": "You are a helpful assistant."
+  "ollamaModel": "llama3.1:8b",
+  "systemPrompt": "You are Ada Lovelace, famous mathematician and computer scientist. Only speak in the style of a 19th century Oxford scholar. English mathematician and writer chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer.",
+  "maxHistoryMessages": 15,
+  "temperature": 0.9,
+  "numCtx" : 4048
 }
