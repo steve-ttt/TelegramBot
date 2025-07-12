@@ -125,13 +125,12 @@ public class LLMinterface {
     }
 
     // Now, combine mainAnswer and formattedThinkingProcess
-    String finalMessage = mainAnswer;
+    String finalMessage = "";
     if (!formattedThinkingProcess.isEmpty()) {
-      // Add a separator if both parts exist
-      if (!finalMessage.isEmpty()) {
-        finalMessage += "\n\n";
-      }
+      
       finalMessage += formattedThinkingProcess;
+      finalMessage += "\n"; // Ensure there's a newline after the spoiler
+      finalMessage += mainAnswer; // Append the main answer after the spoiler
     }
 
     // Check if the final message exceeds the limit and truncate the spoiler if needed
@@ -150,11 +149,10 @@ public class LLMinterface {
       String truncatedRawThinkingProcess = rawThinkingProcess.substring(0, Math.min(rawThinkingProcess.length(), maxRawThinkingContentLength)) + ellipsis;
       formattedThinkingProcess = "<tg-spoiler><b>Thinking Process:</b>\n" + truncatedRawThinkingProcess + "</tg-spoiler>";
 
-      finalMessage = mainAnswer;
-      if (!finalMessage.isEmpty()) {
-        finalMessage += "\n\n";
-      }
-      finalMessage += formattedThinkingProcess;
+      
+      // Rebuild the final message with the truncated thinking process
+      finalMessage = formattedThinkingProcess;
+      finalMessage += mainAnswer;
     }
 
     return finalMessage.trim();

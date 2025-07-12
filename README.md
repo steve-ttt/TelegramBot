@@ -59,17 +59,21 @@ The recommended way to run the bot is using the provided Docker script.
 
 1.  **Configure the bot:** Create your `myBot.json` configuration file as described above.
 
-2. **edit the makeDocker.sh script to point to your config file `myBot.json`:**
+2.  **Update the dockerfile to point to your config file:**
+
+3.  **build the uberjar(shadowJar):** ./gradlew shadowJar
+
+4. **edit the makeDocker.sh script to point to your config file `myBot.json`:**
     ```bash
     vi makeDocker.sh
     ```
 
-2.  **Make the script executable:**
+5.  **Make the script executable:**
     ```bash
     chmod +x makeDocker.sh
     ```
 
-3.  **Run the script:**
+6.  **Run the script:**
     ```bash
     ./makeDocker.sh
     ```
