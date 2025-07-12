@@ -129,7 +129,7 @@ public class LLMinterface {
     if (!formattedThinkingProcess.isEmpty()) {
       
       finalMessage += formattedThinkingProcess;
-      finalMessage += "\n"; // Ensure there's a newline after the spoiler
+      finalMessage += "\n\n"; // Ensure there's a newline after the spoiler
       finalMessage += mainAnswer; // Append the main answer after the spoiler
     }
 
@@ -151,7 +151,7 @@ public class LLMinterface {
 
       
       // Rebuild the final message with the truncated thinking process
-      finalMessage = formattedThinkingProcess;
+      finalMessage = formattedThinkingProcess + "\n\n";
       finalMessage += mainAnswer;
     }
 
